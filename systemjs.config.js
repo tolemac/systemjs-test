@@ -6,6 +6,8 @@
   System.config({
     bundles: {
       'bundles/vendor.js': [
+        "app/*",
+        "main.js",
         "node_modules/@angular/*",
         "node_modules/rxjs/*"
       ]
