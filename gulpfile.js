@@ -42,4 +42,17 @@ gulp.task("bundle:app", (cb) => {
         });
 });
 
+gulp.task("bundle:lazymodule", (cb) => {
+    var builder = new Builder("./", "./systemjs.config.js");
+
+    builder.bundle("app/lazy/lazy.module.js - main.js", "./bundles/lazy.js",
+        { minify: true })
+        .then(function () {
+            cb();
+        })
+        .catch(function (err) {
+            cb(err);
+        });
+});
+
 gulp.task("bundle", ["bundle:poly", "bundle:vendor", "bundle:app"]);

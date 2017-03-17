@@ -10,6 +10,9 @@
         "vendor.js",
         "angular.js"
       ],
+      'bundles/lazy.js': [
+        "app/lazy/*"
+      ],
       'bundles/app.js': [
         "main.js",
         "app/*"
