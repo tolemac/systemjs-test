@@ -1,11 +1,26 @@
 var gulp = require("gulp");
 var Builder = require("systemjs-builder");
+var concat = require("gulp-concat");
+var uglify = require("gulp-uglify");
 
-gulp.task("bundle", (cb) => {
+var polyfillFiles = [
+    "node_modules/core-js/client/shim.min.js",
+    "node_modules/zone.js/dist/zone.js",
+    "node_modules/systemjs/dist/system.src.js"
+];
+
+gulp.task("bundle:poly", () => {
+    return gulp.src(polyfillFiles)
+        .pipe(concat('polyfills.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('bundles'));
+});
+
+gulp.task("bundle:vendor", (cb) => {
     var builder = new Builder("./", "./systemjs.config.js");
 
-    builder.bundle("main.js", "./bundles/vendor.js",
-        { minify: false })
+    builder.bundle("vendor.js - [node_modules/@angular/**/*]", "./bundles/vendor.js",
+        { minify: true })
         .then(function () {
             cb();
         })
@@ -13,3 +28,18 @@ gulp.task("bundle", (cb) => {
             cb(err);
         });
 });
+
+gulp.task("bundle:app", (cb) => {
+    var builder = new Builder("./", "./systemjs.config.js");
+
+    builder.bundle("main.js - vendor.js", "./bundles/app.js",
+        { minify: true })
+        .then(function () {
+            cb();
+        })
+        .catch(function (err) {
+            cb(err);
+        });
+});
+
+gulp.task("bundle", ["bundle:poly", "bundle:vendor", "bundle:app"]);

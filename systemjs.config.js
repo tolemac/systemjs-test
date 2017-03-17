@@ -6,10 +6,13 @@
   System.config({
     bundles: {
       'bundles/vendor.js': [
-        "app/*",
+        "node_modules/*",
+        "vendor.js",
+        "angular.js"
+      ],
+      'bundles/app.js': [
         "main.js",
-        "node_modules/@angular/*",
-        "node_modules/rxjs/*"
+        "app/*"
       ]
     },
     paths: {
@@ -20,6 +23,8 @@
     map: {
       // our app is within the app folder
       app: 'app',
+      'vendor': "./vendor.js",
+      'angular': "./angular.js",
 
       // angular bundles
       '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
@@ -40,7 +45,8 @@
         defaultExtension: 'js'
       },
       rxjs: {
-        defaultExtension: 'js'
+        defaultExtension: 'js',
+        main: "Rx.js"
       }
     }
   });
