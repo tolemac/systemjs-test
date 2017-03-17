@@ -55,4 +55,4 @@ gulp.task("bundle:lazymodule", (cb) => {
         });
 });
 
-gulp.task("bundle", ["bundle:poly", "bundle:vendor", "bundle:app"]);
+gulp.task("bundle", ["bundle:poly", "bundle:vendor", "bundle:app", "bundle:lazymodule"]);
