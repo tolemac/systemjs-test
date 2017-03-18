@@ -19,8 +19,8 @@ gulp.task("bundle:poly", () => {
 gulp.task("bundle:vendor", (cb) => {
     var builder = new Builder("./", "./systemjs.config.js");
 
-    builder.bundle("vendor.js - [node_modules/ng2-bootstrap/**/*]", "./bundles/vendor.js",
-        { minify: false })
+    builder.bundle("vendor.js", "./bundles/vendor.js",
+        { minify: true })
         .then(function () {
             cb();
         })

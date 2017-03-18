@@ -8,8 +8,7 @@
       'bundles/vendor.js': [
         "node_modules/*",
         //"custom-bundles/*",
-        "vendor.js",
-        "angular.js"
+        "vendor.js"
       ],
       'bundles/lazy.js': [
         "app/lazy/*"
@@ -22,7 +21,7 @@
     paths: {
       // paths serve as alias
       'npm:': 'node_modules/',
-      "CUSTOM_BUNDLE:": "custom-bundles/"
+      //"CUSTOM_BUNDLE:": "custom-bundles/"
     },
     // map tells the System loader where to look for things
     map: {
@@ -73,6 +72,12 @@
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
+      'bundles/vendor.js': {
+        format: "system"
+      },
+      'bundles/app.js': {
+        format: "system"
+      },
       app: {
         defaultExtension: 'js'
       },
@@ -85,14 +90,7 @@
       },
       moment: {
         main: "min/moment-with-locales.js", defaultExtension: "js"
-      },
-      'bundles/vendor.js': {
-        format: "system"
-      },
-      'bundles/app.js': {
-        format: "system"
       }
-
     },
     meta: {
       "*.css": { loader: "css" },
