@@ -7,7 +7,7 @@
     bundles: {
       'bundles/vendor.js': [
         "node_modules/*",
-        "custom-bundles/*",
+        //"custom-bundles/*",
         "vendor.js",
         "angular.js"
       ],
@@ -32,24 +32,25 @@
       'angular': "./angular.js",
 
       // angular bundles
-      //'@angular/core': 'npm:@angular/core/bundles/core.umd.min.js',
-      '@angular/core': 'CUSTOM_BUNDLE:@angular/core.umd.js',
-      //'@angular/common': 'npm:@angular/common/bundles/common.umd.min.js',
-      '@angular/common': 'CUSTOM_BUNDLE:@angular/common.umd.js',
-      //'@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.min.js',
-      '@angular/compiler': 'CUSTOM_BUNDLE:@angular/compiler.umd.js',
-      //'@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.min.js',
-      '@angular/platform-browser': 'CUSTOM_BUNDLE:@angular/platform-browser.umd.js',
-      //'@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.min.js',
-      '@angular/platform-browser-dynamic': 'CUSTOM_BUNDLE:@angular/platform-browser-dynamic.umd.js',
-      //'@angular/http': 'npm:@angular/http/bundles/http.umd.min.js',
-      '@angular/http': 'CUSTOM_BUNDLE:@angular/http.umd.js',
-      //'@angular/router': 'npm:@angular/router/bundles/router.umd.min.js',
-      '@angular/router': 'CUSTOM_BUNDLE:@angular/router.umd.js',
-      //'@angular/forms': 'npm:@angular/forms/bundles/forms.umd.min.js',
-      '@angular/forms': 'CUSTOM_BUNDLE:@angular/forms.umd.js',
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
-      // other libraries
+      // '@angular/core': 'CUSTOM_BUNDLE:@angular/core.umd.js',
+      // '@angular/common': 'CUSTOM_BUNDLE:@angular/common.umd.js',
+      // '@angular/compiler': 'CUSTOM_BUNDLE:@angular/compiler.umd.js',
+      // '@angular/platform-browser': 'CUSTOM_BUNDLE:@angular/platform-browser.umd.js',
+      // '@angular/platform-browser-dynamic': 'CUSTOM_BUNDLE:@angular/platform-browser-dynamic.umd.js',
+      // '@angular/http': 'CUSTOM_BUNDLE:@angular/http.umd.js',
+      // '@angular/router': 'CUSTOM_BUNDLE:@angular/router.umd.js',
+      // '@angular/forms': 'CUSTOM_BUNDLE:@angular/forms.umd.js',
+
+       // other libraries
       'rxjs': 'npm:rxjs',
 
       "ng2-bootstrap": "npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js",
@@ -84,7 +85,14 @@
       },
       moment: {
         main: "min/moment-with-locales.js", defaultExtension: "js"
+      },
+      'bundles/vendor.js': {
+        format: "system"
+      },
+      'bundles/app.js': {
+        format: "system"
       }
+
     },
     meta: {
       "*.css": { loader: "css" },

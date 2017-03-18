@@ -20,7 +20,7 @@ gulp.task("bundle:vendor", (cb) => {
     var builder = new Builder("./", "./systemjs.config.js");
 
     builder.bundle("vendor.js - [node_modules/ng2-bootstrap/**/*]", "./bundles/vendor.js",
-        { minify: true })
+        { minify: false })
         .then(function () {
             cb();
         })
