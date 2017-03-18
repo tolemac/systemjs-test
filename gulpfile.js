@@ -33,7 +33,7 @@ gulp.task("bundle:app", (cb) => {
     var builder = new Builder("./", "./systemjs.config.js");
 
     builder.bundle("main.js - vendor.js", "./bundles/app.js",
-        { minify: false })
+        { minify: true, sourceMaps: true })
         .then(function () {
             cb();
         })
@@ -46,7 +46,7 @@ gulp.task("bundle:lazymodule", (cb) => {
     var builder = new Builder("./", "./systemjs.config.js");
 
     builder.bundle("app/lazy/lazy.module.js - main.js", "./bundles/lazy.js",
-        { minify: true })
+        { minify: true, sourceMaps: true })
         .then(function () {
             cb();
         })
