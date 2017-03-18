@@ -19,7 +19,7 @@ gulp.task("bundle:poly", () => {
 gulp.task("bundle:vendor", (cb) => {
     var builder = new Builder("./", "./systemjs.config.js");
 
-    builder.bundle("vendor.js - [node_modules/@angular/**/*]", "./bundles/vendor.js",
+    builder.bundle("vendor.js - [node_modules/@angular/**/*] - [node_modules/ng2-bootstrap/**/*]", "./bundles/vendor.js",
         { minify: true })
         .then(function () {
             cb();
@@ -33,7 +33,7 @@ gulp.task("bundle:app", (cb) => {
     var builder = new Builder("./", "./systemjs.config.js");
 
     builder.bundle("main.js - vendor.js", "./bundles/app.js",
-        { minify: true })
+        { minify: false })
         .then(function () {
             cb();
         })

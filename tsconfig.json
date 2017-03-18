@@ -12,6 +12,7 @@
     ],
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "noEmitHelpers": true
   }
 }
