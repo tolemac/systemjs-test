@@ -7,4 +7,3 @@ app/**/*.js
 main.js
 !systemjs.config.js
 *.js.map
-bundles

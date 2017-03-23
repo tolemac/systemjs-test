@@ -12,7 +12,7 @@ var polyfillFiles = [
 gulp.task("bundle:poly", () => {
     return gulp.src(polyfillFiles)
         .pipe(concat('polyfills.js'))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(gulp.dest('bundles'));
 });
 
@@ -20,7 +20,7 @@ gulp.task("bundle:vendor", (cb) => {
     var builder = new Builder("./", "./systemjs.config.js");
 
     builder.bundle("vendor.js", "./bundles/vendor.js",
-        { minify: true })
+        { minify: false })
         .then(function () {
             cb();
         })

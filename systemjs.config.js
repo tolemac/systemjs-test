@@ -7,7 +7,6 @@
     bundles: {
       'bundles/vendor.js': [
         "node_modules/*",
-        //"custom-bundles/*",
         "vendor.js"
       ],
       'bundles/lazy.js': [
@@ -21,7 +20,6 @@
     paths: {
       // paths serve as alias
       'npm:': 'node_modules/',
-      //"CUSTOM_BUNDLE:": "custom-bundles/"
     },
     // map tells the System loader where to look for things
     map: {
@@ -39,15 +37,6 @@
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-
-      // '@angular/core': 'CUSTOM_BUNDLE:@angular/core.umd.js',
-      // '@angular/common': 'CUSTOM_BUNDLE:@angular/common.umd.js',
-      // '@angular/compiler': 'CUSTOM_BUNDLE:@angular/compiler.umd.js',
-      // '@angular/platform-browser': 'CUSTOM_BUNDLE:@angular/platform-browser.umd.js',
-      // '@angular/platform-browser-dynamic': 'CUSTOM_BUNDLE:@angular/platform-browser-dynamic.umd.js',
-      // '@angular/http': 'CUSTOM_BUNDLE:@angular/http.umd.js',
-      // '@angular/router': 'CUSTOM_BUNDLE:@angular/router.umd.js',
-      // '@angular/forms': 'CUSTOM_BUNDLE:@angular/forms.umd.js',
 
        // other libraries
       'rxjs': 'npm:rxjs',
